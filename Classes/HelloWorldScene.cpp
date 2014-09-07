@@ -1,4 +1,7 @@
 #include "HelloWorldScene.h"
+#include "GameScene.h"
+#include "HelpScene.h"
+#include "AboutScene.h"
 
 USING_NS_CC;
 
@@ -42,9 +45,27 @@ bool HelloWorld::init()
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
+    closeItem->setTag(10);
 
+    //新增菜单条目
+    auto gameItem = MenuItemFont::create("StartGame", CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    auto helpItem = MenuItemFont::create("Help", CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    auto aboutItem = MenuItemFont::create("About", CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    
+    gameItem->setPosition(Point(origin.x + visibleSize.width/2 - closeItem->getContentSize().width/2, 200));
+    helpItem->setPosition(Point(origin.x + visibleSize.width/2 - closeItem->getContentSize().width/2, 150));
+    aboutItem->setPosition(Point(origin.x + visibleSize.width/2 - closeItem->getContentSize().width/2, 100));
+    
+    gameItem->setColor(Color3B::BLACK);
+    helpItem->setColor(Color3B::BLACK);
+    aboutItem->setColor(Color3B::BLACK);
+    
+    gameItem->setTag(11);
+    helpItem->setTag(12);
+    aboutItem->setTag(13);
+    
     // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
+    auto menu = Menu::create(closeItem, gameItem, helpItem,aboutItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
@@ -64,7 +85,7 @@ bool HelloWorld::init()
     this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
+    auto sprite = Sprite::create("menu.png");
 
     // position the sprite on the center of the screen
     sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
@@ -78,14 +99,36 @@ bool HelloWorld::init()
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
-	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
-    return;
-#endif
-
-    Director::getInstance()->end();
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
-#endif
+    MenuItem *nowItem = (MenuItem *)pSender;
+    
+    switch (nowItem->getTag()) {
+        case 10:
+            #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+                MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
+                return;
+            #endif
+            
+                Director::getInstance()->end();
+            
+            #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+                exit(0);
+            #endif
+            break;
+        case 11:
+            Director::getInstance()->replaceScene(GameScene::createScene());
+            break;
+            
+        case 12:
+            
+            Director::getInstance()->replaceScene(TransitionFlipY::create(0.5, HelpScene::createScene()));
+            break;
+        
+        case 13:
+            Director::getInstance()->replaceScene(TransitionFlipX::create(0.5, AboutScene::createScene()));
+            break;
+            
+        default:
+            break;
+    }
+    
 }
