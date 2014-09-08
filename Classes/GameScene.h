@@ -34,6 +34,7 @@ public:
     Vector<Sprite *> allEnemy;
     virtual void newEnemy(float dt);
     virtual void moveEnemy(float dt);
+    virtual void update(float dt);
 };
 
 
