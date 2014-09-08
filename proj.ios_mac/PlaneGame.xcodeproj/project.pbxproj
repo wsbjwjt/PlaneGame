@@ -25,6 +25,10 @@
 		07BA598919BC9E190095FB21 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BA598719BC9E190095FB21 /* player.png */; };
 		07BA598E19BD2EA80095FB21 /* bullet3.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BA598D19BD2EA80095FB21 /* bullet3.png */; };
 		07BA598F19BD2EA80095FB21 /* bullet3.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BA598D19BD2EA80095FB21 /* bullet3.png */; };
+		07BA599719BDB8E90095FB21 /* aaa.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BA599519BDB8E90095FB21 /* aaa.png */; };
+		07BA599819BDB8E90095FB21 /* aaa.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BA599519BDB8E90095FB21 /* aaa.png */; };
+		07BA599919BDB8E90095FB21 /* ccc.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BA599619BDB8E90095FB21 /* ccc.png */; };
+		07BA599A19BDB8E90095FB21 /* ccc.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BA599619BDB8E90095FB21 /* ccc.png */; };
 		1AC6FB1F180E996B004C840B /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFF180E9839004C840B /* libbox2d Mac.a */; };
 		1AC6FB20180E996B004C840B /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFD180E9839004C840B /* libchipmunk Mac.a */; };
 		1AC6FB21180E996B004C840B /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2dx Mac.a */; };
@@ -245,6 +249,8 @@
 		0735823119BC5CDB00F02095 /* AboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutScene.h; path = ../Classes/AboutScene.h; sourceTree = "<group>"; };
 		07BA598719BC9E190095FB21 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		07BA598D19BD2EA80095FB21 /* bullet3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet3.png; sourceTree = "<group>"; };
+		07BA599519BDB8E90095FB21 /* aaa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aaa.png; sourceTree = "<group>"; };
+		07BA599619BDB8E90095FB21 /* ccc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccc.png; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
@@ -491,6 +497,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07BA599519BDB8E90095FB21 /* aaa.png */,
+				07BA599619BDB8E90095FB21 /* ccc.png */,
 				07BA598D19BD2EA80095FB21 /* bullet3.png */,
 				07BA598719BC9E190095FB21 /* player.png */,
 				0735821A19BC2B4400F02095 /* about.png */,
@@ -676,6 +684,7 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				07BA599719BDB8E90095FB21 /* aaa.png in Resources */,
 				07BA598E19BD2EA80095FB21 /* bullet3.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
@@ -692,6 +701,7 @@
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
+				07BA599919BDB8E90095FB21 /* ccc.png in Resources */,
 				0735822219BC2B4400F02095 /* help.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -704,12 +714,14 @@
 				0735822519BC2B4400F02095 /* menu.png in Resources */,
 				0735821F19BC2B4400F02095 /* about.png in Resources */,
 				07BA598919BC9E190095FB21 /* player.png in Resources */,
+				07BA599A19BDB8E90095FB21 /* ccc.png in Resources */,
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
 				0735822119BC2B4400F02095 /* background4.png in Resources */,
 				07BA598F19BD2EA80095FB21 /* bullet3.png in Resources */,
 				5087E75517EB910900C73F5D /* HelloWorld.png in Resources */,
+				07BA599819BDB8E90095FB21 /* aaa.png in Resources */,
 				0735822319BC2B4400F02095 /* help.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

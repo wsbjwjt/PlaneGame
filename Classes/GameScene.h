@@ -30,6 +30,10 @@ public:
     Vector<Sprite *> allBullet;
     virtual void newBullet(float dt);
     virtual void moveBullet(float dt);
+    
+    Vector<Sprite *> allEnemy;
+    virtual void newEnemy(float dt);
+    virtual void moveEnemy(float dt);
 };
 
 

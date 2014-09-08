@@ -56,9 +56,14 @@ bool GameScene::init() {
     this->schedule(schedule_selector(GameScene::moveBackground), 0.01);
     
     //Add bullet new and move
-    this->schedule(schedule_selector(GameScene::newBullet), 0.7);
+    this->schedule(schedule_selector(GameScene::newBullet), 0.5);
     
     this->schedule(schedule_selector(GameScene::moveBullet), 0.01);
+    
+    //Add Enemies
+    this->schedule(schedule_selector(GameScene::newEnemy), 0.5);
+    
+    this->schedule(schedule_selector(GameScene::moveEnemy), 0.01);
     
     return true;
 }
@@ -129,7 +134,38 @@ void GameScene::moveBullet(float dt) {
     }
 }
 
-
+void GameScene::newEnemy(float dt) {
+    
+    Sprite * enemy = nullptr;
+    int num = rand()%10;
+    
+    if (num >= 3) {
+        enemy = Sprite::create("aaa.png");
+        enemy->setTag(1000);
+    } else {
+        
+        enemy = Sprite::create("ccc.png");
+        enemy->setTag(2000);
+    }
+    enemy->setPosition(Vec2(rand()%300 + 10, 500));
+    this->addChild(enemy);
+    this->allEnemy.pushBack(enemy);
+    
+}
+void GameScene::moveEnemy(float dt) {
+    
+    for (int i = 0; i < allEnemy.size(); i++) {
+        
+        auto nowEnemy = allEnemy.at(i);
+        nowEnemy->setPositionY(nowEnemy->getPositionY()-3);
+        if (nowEnemy->getPositionY() < 0) {
+            
+            nowEnemy->removeFromParent();
+            allEnemy.eraseObject(nowEnemy);
+            i--;
+        }
+    }
+}
 
 
 
