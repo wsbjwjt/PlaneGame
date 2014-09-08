@@ -19,6 +19,17 @@ public:
     bool init();
     CREATE_FUNC(GameScene);
     static Scene * createScene();
+    
+    void moveBackground(float t);
+    
+    virtual bool onTouchBegan(Touch *touch, Event *unused_event);
+    virtual void onTouchMoved(Touch *touch, Event *unused_event);
+    virtual void onTouchEnded(Touch *touch, Event *unused_event);
+    int px, py;
+    
+    Vector<Sprite *> allBullet;
+    virtual void newBullet(float dt);
+    virtual void moveBullet(float dt);
 };
 
 
