@@ -167,6 +167,25 @@ void GameScene::moveEnemy(float dt) {
     }
 }
 
+void GameScene::update(float dt) {
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
