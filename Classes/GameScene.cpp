@@ -65,6 +65,8 @@ bool GameScene::init() {
     
     this->schedule(schedule_selector(GameScene::moveEnemy), 0.01);
     
+    this->scheduleUpdate();
+    
     return true;
 }
 
@@ -169,7 +171,15 @@ void GameScene::moveEnemy(float dt) {
 
 void GameScene::update(float dt) {
     
-    
+    for (int i = 0; i < allEnemy.size(); i++) {
+        auto nowEnemy = allEnemy.at(i);
+        
+        for (int j = 0; j < allBullet.size(); j++) {
+            auto nowBullet = allBullet.at(i);
+            
+            
+        }
+    }
 }
 
 
